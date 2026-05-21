@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #0d2353;
+    --navy-dark: #0a1628;
+    --navy-light: #1a3a6e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  .btn-navy {
+    @apply bg-[#0d2353] text-white px-6 py-3 rounded font-semibold hover:bg-[#1a3a6e] transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#0d2353] text-[#0d2353] px-6 py-3 rounded font-semibold hover:bg-[#0d2353] hover:text-white transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md border border-gray-100;
+  }
+
+  .input-field {
+    @apply w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0d2353] focus:border-transparent transition-all;
+  }
+
+  /** Enables `cqw` in certificate overlay so text scales with rendered width. */
+  .certificate-jpg-root {
+    container-type: inline-size;
+  }
+}
+
+/* Skeleton animation */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.skeleton {
+  @apply bg-gray-200 rounded animate-pulse;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0d2353;
+  border-radius: 3px;
+}
