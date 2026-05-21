@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Playfair_Display, Poppins } from "next/font/google";
+
 import "./globals.css";
 import { Providers } from "@/providers";
 
@@ -25,37 +27,44 @@ export const metadata: Metadata = {
   ),
 
   title: {
-    default: "Swapnopuri Properties and Developments",
-    template: "%s | Swapnopuri Properties and Developments",
+    default: "Shwapnopuri Properties & Developments",
+    template: "%s | Shwapnopuri Properties & Developments",
   },
 
   description:
-    "Swapnopuri Properties and Developments is a trusted real estate and property development company in Bangladesh, providing modern, luxurious, and affordable living solutions.",
+    "Shwapnopuri Properties & Developments is a trusted real estate and property development company in Bangladesh offering luxurious apartments, flats, land development, and modern living solutions.",
 
   keywords: [
-    "Swapnopuri Properties",
+    "Shwapnopuri Properties",
+    "Shwapnopuri Developments",
     "Real Estate Bangladesh",
-    "Property Development",
+    "Property Development Company",
+    "Apartment in Bangladesh",
     "Apartment in Comilla",
-    "Land Development",
-    "Luxury Apartment",
-    "Bangladesh Real Estate",
-    "Property Company",
     "Flat Sale in Comilla",
+    "Luxury Apartment",
+    "Land Development",
+    "Bangladesh Real Estate",
+    "Property Company Bangladesh",
     "Real Estate Company",
+    "Modern Apartments",
+    "Comilla Flat",
+    "Bangladesh Property",
+    "Property Developer",
   ],
 
   authors: [
     {
-      name: "Swapnopuri Properties and Developments",
+      name: "Shwapnopuri Properties & Developments",
+      url: "https://shwapnopuripropertiesanddevelopments.com",
     },
   ],
 
-  creator: "Swapnopuri Properties and Developments",
+  creator: "Shwapnopuri Properties & Developments",
 
-  publisher: "Swapnopuri Properties and Developments",
+  publisher: "Shwapnopuri Properties & Developments",
 
-  applicationName: "Swapnopuri Properties and Developments",
+  applicationName: "Shwapnopuri Properties & Developments",
 
   category: "Real Estate",
 
@@ -63,6 +72,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
     nocache: false,
+
     googleBot: {
       index: true,
       follow: true,
@@ -74,7 +84,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "rfDH2tHBngOGu1Hqsy2NrphAp82RMTcFgnQaGPYVRB4",
+    google: "NLGkHX1fO8XSAqCrhx4sjWsQJVE8iYBzUlVIFroEuvk",
   },
 
   alternates: {
@@ -83,13 +93,14 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Swapnopuri Properties and Developments",
+    title: "Shwapnopuri Properties & Developments",
+
     description:
       "Trusted real estate and property development company in Bangladesh.",
 
     url: "https://shwapnopuripropertiesanddevelopments.com",
 
-    siteName: "Swapnopuri Properties and Developments",
+    siteName: "Shwapnopuri Properties & Developments",
 
     locale: "en_US",
 
@@ -97,25 +108,31 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://shwapnopuripropertiesanddevelopments.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Swapnopuri Properties and Developments",
+        alt: "Shwapnopuri Properties & Developments",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Swapnopuri Properties and Developments",
+
+    title: "Shwapnopuri Properties & Developments",
+
     description:
       "Trusted real estate and property development company in Bangladesh.",
-    images: ["/og-image.jpg"],
+
+    images: [
+      "https://shwapnopuripropertiesanddevelopments.com/og-image.jpg",
+    ],
   },
 
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
@@ -126,9 +143,51 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="NLGkHX1fO8XSAqCrhx4sjWsQJVE8iYBzUlVIFroEuvk"
+        />
+      </head>
+
       <body
         className={`${inter.variable} ${playfair.variable} ${poppins.variable} font-sans antialiased`}
       >
+        <Script
+          id="schema-markup"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+
+              "@type": "RealEstateAgent",
+
+              name: "Shwapnopuri Properties & Developments",
+
+              url: "https://shwapnopuripropertiesanddevelopments.com",
+
+              logo:
+                "https://shwapnopuripropertiesanddevelopments.com/og-image.jpg",
+
+              image:
+                "https://shwapnopuripropertiesanddevelopments.com/og-image.jpg",
+
+              description:
+                "Trusted real estate and property development company in Bangladesh.",
+
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "BD",
+              },
+
+              sameAs: [
+                "https://facebook.com/",
+                "https://instagram.com/",
+              ],
+            }),
+          }}
+        />
+
         <Providers>{children}</Providers>
       </body>
     </html>
