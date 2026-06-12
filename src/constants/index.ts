@@ -4,9 +4,9 @@ export const COMPANY = {
   phone: process.env.NEXT_PUBLIC_PHONE || "+8801342642413",
   email: process.env.NEXT_PUBLIC_EMAIL || "shwapnopuridevelopments@gmail.com",
   address: "Pashchim gaon, Mia Para, P.O. Pashchim gaon, Post code 3570, Laksam, Cumilla, Bangladesh",
-  facebook: "https://facebook.com",
-  instagram: "https://instagram.com",
-  youtube: "https://youtube.com",
+  facebook: "https://www.facebook.com/profile.php?id=61589926505394",
+  instagram: "https://www.instagram.com/shwapnopurip?utm_source=qr&igsh=MWE2ejQ5azZuZzZjeA==",
+  youtube: "https://www.youtube.com/@SHWAPNOPURIPROPERTIESDEVELOPME",
 };
 
 export const NAV_LINKS = [
